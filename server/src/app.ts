@@ -18,6 +18,8 @@ app.use("/api/auth", authRouter);
 app.use("/api/todo", todoRouter);
 
 
+
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
     connectToDB().then(() => console.log("Connected to mongo Db"))

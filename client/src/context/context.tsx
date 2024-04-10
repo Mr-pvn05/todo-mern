@@ -10,11 +10,12 @@ export const TodoContextProivider = ({ children }) => {
 
   const [loading, setLoading] = useState(false);
 
-  const [currentUser, setCurrentUser] = useState(JSON.parse(localStorage.getItem("user") as string));
+  const [currentUser, setCurrentUser] = useState(null);
 
   const checkUserAuthenticated = () => {
     const user = JSON.parse(localStorage.getItem("user") as string);
     if (user) {
+      setCurrentUser(user)
       navigate("/");
     } else {
       navigate("/login");
